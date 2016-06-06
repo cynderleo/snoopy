@@ -282,3 +282,12 @@ libsnoopy_datasources_all_la_SOURCES += \
 	username.c \
 	username.h
 endif
+
+# Data source: username
+#
+if DATASOURCE_ENABLED_ip
+libsnoopy_datasources_all_la_SOURCES += \
+	ip.c \
+	ip.h
+endif
+

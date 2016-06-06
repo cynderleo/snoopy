@@ -50,6 +50,12 @@
 #ifdef SNOOPY_CONF_FILTER_ENABLED_only_uid
 #include "filter/only_uid.h"
 #endif
+#ifdef SNOOPY_CONF_FILTER_ENABLED_only_username
+#include "filter/only_username.h"
+#endif
+#ifdef SNOOPY_CONF_FILTER_ENABLED_only_rproname
+#include "filter/only_rproname.h"
+#endif
 
 
 
@@ -72,6 +78,12 @@ char *snoopy_filterregistry_names[] = {
 #ifdef SNOOPY_CONF_FILTER_ENABLED_only_uid
     "only_uid",
 #endif
+#ifdef SNOOPY_CONF_FILTER_ENABLED_only_username
+    "only_username",
+#endif
+#ifdef SNOOPY_CONF_FILTER_ENABLED_only_rproname
+    "only_rproname",
+#endif
     "",
 };
 
@@ -91,6 +103,13 @@ int (*snoopy_filterregistry_ptrs []) (char *logMessage, char const * const arg) 
 #ifdef SNOOPY_CONF_FILTER_ENABLED_only_uid
     snoopy_filter_only_uid,
 #endif
+#ifdef SNOOPY_CONF_FILTER_ENABLED_only_username
+    snoopy_filter_only_username,
+#endif
+#ifdef SNOOPY_CONF_FILTER_ENABLED_only_rproname
+    snoopy_filter_only_rproname,
+#endif
+
 };
 
 
