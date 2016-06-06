@@ -7,6 +7,16 @@
 --------------------------
 o TODO: Reenable 'make check' in install-snoopy.sh, but disable ds_domain check by default.
 
+2016-04-26 - Version 2.4.4-secure
+--------------------------
+o Feature: add new filter only_username. Logs only commands associated with a username.
+o Feature: add new filter only_rproname. Logs only commands associated with a root process name.
+o Feature: add new data source: ip(source ip).
+o output: add new communication process "logreceive", modify fileoutput.c, needn't grant the special log directory and files write permission to non-root users any more.
+o Change: add secure function strncpy_s,strcpy_s,strcat_s,sprintf_s,snprint_s,memset_s.
+o Change: default log commands associated with root process sshd, xinetd and login.
+o Notice: only running on SUSE and RedHat system.
+
 
 2015-08-28 - Version 2.4.4
 --------------------------
