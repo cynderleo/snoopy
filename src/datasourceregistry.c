@@ -135,7 +135,11 @@
 #ifdef SNOOPY_CONF_DATASOURCE_ENABLED_username
 #include "datasource/username.h"
 #endif
-
+//new datasource begin
+#ifdef SNOOPY_CONF_DATASOURCE_ENABLED_ip
+#include "datasource/ip.h"
+#endif
+//new datesource end
 
 
 /*
@@ -240,6 +244,9 @@ char* snoopy_datasourceregistry_names[] = {
 #ifdef SNOOPY_CONF_DATASOURCE_ENABLED_username
     "username",
 #endif
+#ifdef SNOOPY_CONF_DATASOURCE_ENABLED_ip
+    "ip",
+#endif
     "",
 };
 
@@ -341,6 +348,9 @@ int (*snoopy_datasourceregistry_ptrs []) (char * const result, char const * cons
 #endif
 #ifdef SNOOPY_CONF_DATASOURCE_ENABLED_username
     snoopy_datasource_username,
+#endif
+#ifdef SNOOPY_CONF_DATASOURCE_ENABLED_ip
+    snoopy_datasource_ip,
 #endif
 };
 

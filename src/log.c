@@ -20,13 +20,23 @@
  * Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-
+/*******************************************************************************
+* Copyright @ Huawei Technologies Co., Ltd. 1998-2016. All rights reserved.  
+* File name: log.c
+* History:   
+*     1. Date: 2016/4/26
+*         Author: HuXinlei
+*		  Modification: default logging commands associated with process sshd,xientd,login
+********************************************************************************
+*/ 
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE
+#endif
 
 /*
  * Includes order: from local to global
  */
 #include "log.h"
-
 #include "snoopy.h"
 #include "configuration.h"
 #if defined(SNOOPY_FILTERING_ENABLED)
@@ -36,12 +46,14 @@
 #include "message.h"
 #include "misc.h"
 #include "outputregistry.h"
-
+#include "securec.h"
 #include <stdio.h>
-#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
 #include <string.h>
-
-
+#include <ctype.h>
+#include <stdlib.h>
+#include <limits.h>
 
 /*
  * snoopy_log_syscall_execv
@@ -114,6 +126,9 @@ void snoopy_log_syscall_exec (
     char *const argv[],
     char *const envp[]
 ) {
+	char *rproname_Tag;
+	char *exclude_rpro;
+	int FValue = -1;
     char *logMessage = NULL;
     snoopy_configuration_t *CFG;
 
@@ -148,7 +163,25 @@ void snoopy_log_syscall_exec (
         )
     ) {
 #endif
-        snoopy_log_dispatch(logMessage, SNOOPY_LOG_MESSAGE);
+		rproname_Tag = strstr(CFG->filter_chain, "only_rproname");
+		exclude_rpro = strstr(CFG->filter_chain, "exclude_spawns_of");
+		if ((NULL == rproname_Tag) && (NULL == exclude_rpro))
+		{		
+		//if there is no only_rproname and exclude_spawns_of, only log commands of sshd, xinetd and login process
+			FValue = osaudit_rproname_sx();
+			if (FValue == SNOOPY_FILTER_PASS) {		
+
+				snoopy_log_dispatch(logMessage, SNOOPY_LOG_MESSAGE);
+
+			}
+		
+		}
+		else
+		{
+			snoopy_log_dispatch(logMessage, SNOOPY_LOG_MESSAGE);
+			
+		}
+      
 #if defined(SNOOPY_FILTERING_ENABLED)
     }
 #endif
@@ -158,7 +191,111 @@ void snoopy_log_syscall_exec (
     snoopy_cleanup();
 }
 
+int osaudit_rproname_sx ()
+{
+    return get_rproname_sx(getpid());
+}
 
+
+
+// Read /proc/{pid}/status file and extract the property
+char* read_proc_property_sx (int pid, char* prop_name)
+{
+    char    pid_file[50];
+    FILE   *fp;
+    char   *line = NULL;
+    size_t  lineLen = 0;
+    char   *find_name;
+    char   *find_name_value;
+    size_t  value_size = 0;
+    char    returnValue[NAME_MAX+1] = "";
+
+  
+    sprintf_s(pid_file, 50, "/proc/%d/status", pid);
+    fp = fopen(pid_file, "r");
+    if (NULL == fp) {
+        return NULL;
+    }
+
+    
+    while (getline(&line, &lineLen, fp) != -1) {
+
+        if (0 == lineLen) {
+			goto End_and_Clean;
+			
+        }
+
+        if (NULL == strstr(line, ":")) {
+ 			goto End_and_Clean;
+        }
+
+        
+        char *savePtr = "";
+        find_name = strtok_r(line, ":", &savePtr);
+        find_name_value = strtok_r(NULL, ":", &savePtr);
+        if (NULL == find_name_value) {
+            continue;
+        }
+
+        
+        if (strcmp(prop_name, find_name) == 0) {
+            find_name_value++;                  // There is one tab in front of PID number
+            value_size = strlen(find_name_value); 
+            find_name_value[value_size-1] = 0;       // Terminate the newline at the end of value
+            value_size--;                       // Length is now shorter for 1 character
+
+           
+            if (value_size > NAME_MAX) {
+                strncpy_s(returnValue, NAME_MAX+1, find_name_value, NAME_MAX);
+                returnValue[NAME_MAX] = 0; 
+            } else {
+                strncpy_s(returnValue, NAME_MAX+1, find_name_value, NAME_MAX+1);
+            }
+
+          
+            free(line);
+            fclose(fp);
+            return strdup(returnValue);
+        } 
+    }
+
+End_and_Clean:
+		if (NULL != line) {
+				free(line);
+			}
+			fclose(fp);
+			return NULL;	
+	
+}
+
+
+//find root process name
+int get_rproname_sx (int pid)
+{
+    int     RootPid;
+    char   *name;
+	char   *ppid_str;
+	int FValuesx = -1;
+    ppid_str = read_proc_property_sx(pid, "PPid");
+    if (NULL != ppid_str) {
+        RootPid = atoi(ppid_str);  
+    }
+	else
+		RootPid = 0;
+
+    if (1 == RootPid) {
+        name = read_proc_property_sx(pid, "Name");
+        if ((strcmp(name,"sshd") == 0) || (strcmp(name,"xinetd") == 0)|| (strcmp(name,"login") == 0)) {
+            FValuesx = SNOOPY_FILTER_PASS;
+        } 
+        return FValuesx;
+    } else if (0 == RootPid) {
+		FValuesx = SNOOPY_FILTER_DROP;
+        return FValuesx;
+    } else {
+        return get_rproname_sx(RootPid);
+    }
+}
 
 /*
  * snoopy_log_dispatch

@@ -67,7 +67,7 @@ int snoopy_datasource_datetime (char * const result, char const * const arg)
     }
 
     // Format it
-    if (0 == strftime(timeBuffer, 80, "%FT%T%z", curLocalTime)) {
+    if (0 == strftime(timeBuffer, 80, "%F %T", curLocalTime)) {
         return snprintf(result, SNOOPY_DATASOURCE_MESSAGE_MAX_SIZE, "(error @ strftime())");
     }
 

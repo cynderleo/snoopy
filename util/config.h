@@ -1,354 +1,355 @@
+/* config.h.  Generated from config.h.in by configure.  */
 /* config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* Define to 1 if you have the <ctype.h> header file. */
-#undef HAVE_CTYPE_H
+#define HAVE_CTYPE_H 1
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
-#undef HAVE_DLFCN_H
+#define HAVE_DLFCN_H 1
 
 /* Define to 1 if you have the <errno.h> header file. */
-#undef HAVE_ERRNO_H
+#define HAVE_ERRNO_H 1
 
 /* Define to 1 if you have the <features.h> header file. */
-#undef HAVE_FEATURES_H
+#define HAVE_FEATURES_H 1
 
 /* Define to 1 if you have the `fork' function. */
-#undef HAVE_FORK
+#define HAVE_FORK 1
 
 /* Define to 1 if you have the `getcwd' function. */
-#undef HAVE_GETCWD
+#define HAVE_GETCWD 1
 
 /* Define to 1 if you have the `gethostname' function. */
-#undef HAVE_GETHOSTNAME
+#define HAVE_GETHOSTNAME 1
 
 /* Define to 1 if you have the `getsid' function. */
-#undef HAVE_GETSID
+#define HAVE_GETSID 1
 
 /* Define to 1 if you have the `gettimeofday' function. */
-#undef HAVE_GETTIMEOFDAY
+#define HAVE_GETTIMEOFDAY 1
 
 /* Define to 1 if you have the <grp.h> header file. */
-#undef HAVE_GRP_H
+#define HAVE_GRP_H 1
 
 /* Define to 1 if you have the <inttypes.h> header file. */
-#undef HAVE_INTTYPES_H
+#define HAVE_INTTYPES_H 1
 
 /* Define to 1 if you have the `dl' library (-ldl). */
-#undef HAVE_LIBDL
+#define HAVE_LIBDL 1
 
 /* Define to 1 if you have the `pthread' library (-lpthread). */
-#undef HAVE_LIBPTHREAD
+#define HAVE_LIBPTHREAD 1
 
 /* Define to 1 if you have the <limits.h> header file. */
-#undef HAVE_LIMITS_H
+#define HAVE_LIMITS_H 1
 
 /* Define to 1 if your system has a GNU libc compatible `malloc' function, and
    to 0 otherwise. */
-#undef HAVE_MALLOC
+#define HAVE_MALLOC 1
 
 /* Define to 1 if you have the <memory.h> header file. */
-#undef HAVE_MEMORY_H
+#define HAVE_MEMORY_H 1
 
 /* Define to 1 if you have the <pwd.h> header file. */
-#undef HAVE_PWD_H
+#define HAVE_PWD_H 1
 
 /* Define to 1 if you have the `socket' function. */
-#undef HAVE_SOCKET
+#define HAVE_SOCKET 1
 
 /* Define to 1 if you have the <stdint.h> header file. */
-#undef HAVE_STDINT_H
+#define HAVE_STDINT_H 1
 
 /* Define to 1 if you have the <stdio.h> header file. */
-#undef HAVE_STDIO_H
+#define HAVE_STDIO_H 1
 
 /* Define to 1 if you have the <stdlib.h> header file. */
-#undef HAVE_STDLIB_H
+#define HAVE_STDLIB_H 1
 
 /* Define to 1 if you have the `strchr' function. */
-#undef HAVE_STRCHR
+#define HAVE_STRCHR 1
 
 /* Define to 1 if you have the `strdup' function. */
-#undef HAVE_STRDUP
+#define HAVE_STRDUP 1
 
 /* Define to 1 if you have the <strings.h> header file. */
-#undef HAVE_STRINGS_H
+#define HAVE_STRINGS_H 1
 
 /* Define to 1 if you have the <string.h> header file. */
-#undef HAVE_STRING_H
+#define HAVE_STRING_H 1
 
 /* Define to 1 if you have the `strstr' function. */
-#undef HAVE_STRSTR
+#define HAVE_STRSTR 1
 
 /* Define to 1 if you have the <syslog.h> header file. */
-#undef HAVE_SYSLOG_H
+#define HAVE_SYSLOG_H 1
 
 /* Define to 1 if you have the <sys/socket.h> header file. */
-#undef HAVE_SYS_SOCKET_H
+#define HAVE_SYS_SOCKET_H 1
 
 /* Define to 1 if you have the <sys/stat.h> header file. */
-#undef HAVE_SYS_STAT_H
+#define HAVE_SYS_STAT_H 1
 
 /* Define to 1 if you have the <sys/syscall.h> header file. */
-#undef HAVE_SYS_SYSCALL_H
+#define HAVE_SYS_SYSCALL_H 1
 
 /* Define to 1 if you have the <sys/time.h> header file. */
-#undef HAVE_SYS_TIME_H
+#define HAVE_SYS_TIME_H 1
 
 /* Define to 1 if you have the <sys/types.h> header file. */
-#undef HAVE_SYS_TYPES_H
+#define HAVE_SYS_TYPES_H 1
 
 /* Define to 1 if you have the <sys/un.h> header file. */
-#undef HAVE_SYS_UN_H
+#define HAVE_SYS_UN_H 1
 
 /* Define to 1 if you have the <time.h> header file. */
-#undef HAVE_TIME_H
+#define HAVE_TIME_H 1
 
 /* Define to 1 if you have the <unistd.h> header file. */
-#undef HAVE_UNISTD_H
+#define HAVE_UNISTD_H 1
 
 /* Define to 1 if you have the `vfork' function. */
-#undef HAVE_VFORK
+#define HAVE_VFORK 1
 
 /* Define to 1 if you have the <vfork.h> header file. */
-#undef HAVE_VFORK_H
+/* #undef HAVE_VFORK_H */
 
 /* Define to 1 if `fork' works. */
-#undef HAVE_WORKING_FORK
+#define HAVE_WORKING_FORK 1
 
 /* Define to 1 if `vfork' works. */
-#undef HAVE_WORKING_VFORK
+#define HAVE_WORKING_VFORK 1
 
 /* Define to the sub-directory in which libtool stores uninstalled libraries.
    */
-#undef LT_OBJDIR
+#define LT_OBJDIR ".libs/"
 
 /* Name of package */
-#undef PACKAGE
+#define PACKAGE "snoopy"
 
 /* Define to the address where bug reports for this package should be sent. */
-#undef PACKAGE_BUGREPORT
+#define PACKAGE_BUGREPORT "https://github.com/a2o/snoopy/issues/"
 
 /* Define to the full name of this package. */
-#undef PACKAGE_NAME
+#define PACKAGE_NAME "Snoopy Logger"
 
 /* Define to the full name and version of this package. */
-#undef PACKAGE_STRING
+#define PACKAGE_STRING "Snoopy Logger 2.4.4"
 
 /* Define to the one symbol short name of this package. */
-#undef PACKAGE_TARNAME
+#define PACKAGE_TARNAME "snoopy"
 
 /* Define to the home page for this package. */
-#undef PACKAGE_URL
+#define PACKAGE_URL "https://github.com/a2o/snoopy/"
 
 /* Define to the version of this package. */
-#undef PACKAGE_VERSION
+#define PACKAGE_VERSION "2.4.4"
 
 /* Is config file parsing enabled? */
-#undef SNOOPY_CONF_CONFIGFILE_ENABLED
+#define SNOOPY_CONF_CONFIGFILE_ENABLED 1
 
 /* INI configuration file path to use */
-#undef SNOOPY_CONF_CONFIGFILE_PATH
+#define SNOOPY_CONF_CONFIGFILE_PATH "/usr/local/etc/snoopy.ini"
 
 /* Is datasource "cmdline" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_cmdline
+#define SNOOPY_CONF_DATASOURCE_ENABLED_cmdline 1
 
 /* Is datasource "cwd" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_cwd
+#define SNOOPY_CONF_DATASOURCE_ENABLED_cwd 1
 
 /* Is datasource "datetime" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_datetime
+#define SNOOPY_CONF_DATASOURCE_ENABLED_datetime 1
 
 /* Is datasource "domain" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_domain
+#define SNOOPY_CONF_DATASOURCE_ENABLED_domain 1
 
 /* Is datasource "egid" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_egid
+#define SNOOPY_CONF_DATASOURCE_ENABLED_egid 1
 
 /* Is datasource "egroup" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_egroup
+#define SNOOPY_CONF_DATASOURCE_ENABLED_egroup 1
 
 /* Is datasource "env" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_env
+#define SNOOPY_CONF_DATASOURCE_ENABLED_env 1
 
 /* Is datasource "env_all" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_env_all
+#define SNOOPY_CONF_DATASOURCE_ENABLED_env_all 1
 
 /* Is datasource "euid" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_euid
+#define SNOOPY_CONF_DATASOURCE_ENABLED_euid 1
 
 /* Is datasource "eusername" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_eusername
+#define SNOOPY_CONF_DATASOURCE_ENABLED_eusername 1
 
 /* Is datasource "filename" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_filename
+#define SNOOPY_CONF_DATASOURCE_ENABLED_filename 1
 
 /* Is datasource "gid" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_gid
+#define SNOOPY_CONF_DATASOURCE_ENABLED_gid 1
 
 /* Is datasource "group" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_group
+#define SNOOPY_CONF_DATASOURCE_ENABLED_group 1
 
 /* Is datasource "hostname" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_hostname
+#define SNOOPY_CONF_DATASOURCE_ENABLED_hostname 1
 
 /* Is datasource "ip" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_ip
+#define SNOOPY_CONF_DATASOURCE_ENABLED_ip 1
 
 /* Is datasource "login" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_login
+#define SNOOPY_CONF_DATASOURCE_ENABLED_login 1
 
 /* Is datasource "pid" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_pid
+#define SNOOPY_CONF_DATASOURCE_ENABLED_pid 1
 
 /* Is datasource "ppid" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_ppid
+#define SNOOPY_CONF_DATASOURCE_ENABLED_ppid 1
 
 /* Is datasource "rpname" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_rpname
+#define SNOOPY_CONF_DATASOURCE_ENABLED_rpname 1
 
 /* Is datasource "sid" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_sid
+#define SNOOPY_CONF_DATASOURCE_ENABLED_sid 1
 
 /* Is datasource "snoopy_literal" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_snoopy_literal
+#define SNOOPY_CONF_DATASOURCE_ENABLED_snoopy_literal 1
 
 /* Is datasource "snoopy_threads" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_snoopy_threads
+#define SNOOPY_CONF_DATASOURCE_ENABLED_snoopy_threads 1
 
 /* Is datasource "snoopy_version" available? Forced "Yes". */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_snoopy_version
+#define SNOOPY_CONF_DATASOURCE_ENABLED_snoopy_version 1
 
 /* Is datasource "tid" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_tid
+#define SNOOPY_CONF_DATASOURCE_ENABLED_tid 1
 
 /* Is datasource "tid_kernel" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_tid_kernel
+#define SNOOPY_CONF_DATASOURCE_ENABLED_tid_kernel 1
 
 /* Is datasource "timestamp" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_timestamp
+#define SNOOPY_CONF_DATASOURCE_ENABLED_timestamp 1
 
 /* Is datasource "timestamp_ms" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_timestamp_ms
+#define SNOOPY_CONF_DATASOURCE_ENABLED_timestamp_ms 1
 
 /* Is datasource "timestamp_us" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_timestamp_us
+#define SNOOPY_CONF_DATASOURCE_ENABLED_timestamp_us 1
 
 /* Is datasource "tty" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_tty
+#define SNOOPY_CONF_DATASOURCE_ENABLED_tty 1
 
 /* Is datasource "tty_uid" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_tty_uid
+#define SNOOPY_CONF_DATASOURCE_ENABLED_tty_uid 1
 
 /* Is datasource "tty_username" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_tty_username
+#define SNOOPY_CONF_DATASOURCE_ENABLED_tty_username 1
 
 /* Is datasource "uid" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_uid
+#define SNOOPY_CONF_DATASOURCE_ENABLED_uid 1
 
 /* Is datasource "username" available? */
-#undef SNOOPY_CONF_DATASOURCE_ENABLED_username
+#define SNOOPY_CONF_DATASOURCE_ENABLED_username 1
 
 /* Enable error logging */
-#undef SNOOPY_CONF_ERROR_LOGGING_ENABLED
+/* #undef SNOOPY_CONF_ERROR_LOGGING_ENABLED */
 
 /* filtering subsystem */
-#undef SNOOPY_CONF_FILTERING_ENABLED
+#define SNOOPY_CONF_FILTERING_ENABLED 1
 
 /* Filter chain to use */
-#undef SNOOPY_CONF_FILTER_CHAIN
+#define SNOOPY_CONF_FILTER_CHAIN ""
 
 /* Is filter "exclude_spawns_of" available? */
-#undef SNOOPY_CONF_FILTER_ENABLED_exclude_spawns_of
+#define SNOOPY_CONF_FILTER_ENABLED_exclude_spawns_of 1
 
 /* Is filter "exclude_uid" available? */
-#undef SNOOPY_CONF_FILTER_ENABLED_exclude_uid
+#define SNOOPY_CONF_FILTER_ENABLED_exclude_uid 1
 
 /* Is filter "only_root" available? */
-#undef SNOOPY_CONF_FILTER_ENABLED_only_root
+#define SNOOPY_CONF_FILTER_ENABLED_only_root 1
 
 /* Is filter "only_rproname" available? */
-#undef SNOOPY_CONF_FILTER_ENABLED_only_rproname
+#define SNOOPY_CONF_FILTER_ENABLED_only_rproname 1
 
 /* Is filter "only_tty" available? */
-#undef SNOOPY_CONF_FILTER_ENABLED_only_tty
+#define SNOOPY_CONF_FILTER_ENABLED_only_tty 1
 
 /* Is filter "only_uid" available? */
-#undef SNOOPY_CONF_FILTER_ENABLED_only_uid
+#define SNOOPY_CONF_FILTER_ENABLED_only_uid 1
 
 /* Is filter "only_username" available? */
-#undef SNOOPY_CONF_FILTER_ENABLED_only_username
+#define SNOOPY_CONF_FILTER_ENABLED_only_username 1
 
 /* Custom message format to use */
-#undef SNOOPY_CONF_MESSAGE_FORMAT
+#define SNOOPY_CONF_MESSAGE_FORMAT "[%{uid} %{username} %{rpname} %{cwd} %{datetime} %{ip} %{filename}]: %{cmdline}"
 
 /* Default output provider */
-#undef SNOOPY_CONF_OUTPUT_DEFAULT
+/* #undef SNOOPY_CONF_OUTPUT_DEFAULT */
 
 /* Default output arguments */
-#undef SNOOPY_CONF_OUTPUT_DEFAULT_ARG
+/* #undef SNOOPY_CONF_OUTPUT_DEFAULT_ARG */
 
 /* Is output "devlog" available? */
-#undef SNOOPY_CONF_OUTPUT_ENABLED_devlog
+#define SNOOPY_CONF_OUTPUT_ENABLED_devlog 1
 
 /* Is output "devnull" available? */
-#undef SNOOPY_CONF_OUTPUT_ENABLED_devnull
+#define SNOOPY_CONF_OUTPUT_ENABLED_devnull 1
 
 /* Is output "devtty" available? */
-#undef SNOOPY_CONF_OUTPUT_ENABLED_devtty
+#define SNOOPY_CONF_OUTPUT_ENABLED_devtty 1
 
 /* Is output "file" available? */
-#undef SNOOPY_CONF_OUTPUT_ENABLED_file
+#define SNOOPY_CONF_OUTPUT_ENABLED_file 1
 
 /* Is output "socket" available? Forced "Yes". */
-#undef SNOOPY_CONF_OUTPUT_ENABLED_socket
+#define SNOOPY_CONF_OUTPUT_ENABLED_socket 1
 
 /* Is output "stderr" available? */
-#undef SNOOPY_CONF_OUTPUT_ENABLED_stderr
+#define SNOOPY_CONF_OUTPUT_ENABLED_stderr 1
 
 /* Is output "stdout" available? */
-#undef SNOOPY_CONF_OUTPUT_ENABLED_stdout
+#define SNOOPY_CONF_OUTPUT_ENABLED_stdout 1
 
 /* Is output "syslog" available? */
-#undef SNOOPY_CONF_OUTPUT_ENABLED_syslog
+/* #undef SNOOPY_CONF_OUTPUT_ENABLED_syslog */
 
 /* Syslog facility to use by default */
-#undef SNOOPY_CONF_SYSLOG_FACILITY
+#define SNOOPY_CONF_SYSLOG_FACILITY LOG_AUTHPRIV
 
 /* Syslog ident to use by default */
-#undef SNOOPY_CONF_SYSLOG_IDENT
+#define SNOOPY_CONF_SYSLOG_IDENT "snoopy"
 
 /* Syslog level to use by default */
-#undef SNOOPY_CONF_SYSLOG_LEVEL
+#define SNOOPY_CONF_SYSLOG_LEVEL LOG_INFO
 
 /* thread safety */
-#undef SNOOPY_CONF_THREAD_SAFETY_ENABLED
+/* #undef SNOOPY_CONF_THREAD_SAFETY_ENABLED */
 
 /* Define to 1 if you have the ANSI C header files. */
-#undef STDC_HEADERS
+#define STDC_HEADERS 1
 
 /* Version number of package */
-#undef VERSION
+#define VERSION "2.4.4"
 
 /* Define to `int' if <sys/types.h> doesn't define. */
-#undef gid_t
+/* #undef gid_t */
 
 /* Define to `__inline__' or `__inline' if that's what the C compiler
    calls it, or to nothing if 'inline' is not supported under any name.  */
 #ifndef __cplusplus
-#undef inline
+/* #undef inline */
 #endif
 
 /* Define to rpl_malloc if the replacement function should be used. */
-#undef malloc
+/* #undef malloc */
 
 /* Define to `int' if <sys/types.h> does not define. */
-#undef pid_t
+/* #undef pid_t */
 
 /* Define to `unsigned int' if <sys/types.h> does not define. */
-#undef size_t
+/* #undef size_t */
 
 /* Define to `int' if <sys/types.h> doesn't define. */
-#undef uid_t
+/* #undef uid_t */
 
 /* Define as `fork' if `vfork' does not work. */
-#undef vfork
+/* #undef vfork */

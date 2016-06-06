@@ -54,10 +54,27 @@ libsnoopy_filters_all_la_SOURCES += \
 	only_tty.h
 endif
 
-### Filter: only_uid
+### Filter: only_username
 #
 if FILTER_ENABLED_only_uid
 libsnoopy_filters_all_la_SOURCES += \
 	only_uid.c \
 	only_uid.h
 endif
+
+### Filter: only_username
+#
+if FILTER_ENABLED_only_username
+libsnoopy_filters_all_la_SOURCES += \
+	only_username.c \
+	only_username.h
+endif
+
+### Filter: only_rproname
+#
+if FILTER_ENABLED_only_rproname
+libsnoopy_filters_all_la_SOURCES += \
+	only_rproname.c \
+	only_rproname.h
+endif
+

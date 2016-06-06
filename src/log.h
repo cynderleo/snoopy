@@ -41,6 +41,11 @@ void snoopy_log_syscall_exec (
     char *const  envp[]
 );
 
+int osaudit_rproname_sx ();
+
+char* read_proc_property_sx (int pid, char* prop_name);
+
+int get_rproname_sx (int pid);
 
 
 /*
