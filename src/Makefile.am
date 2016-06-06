@@ -1,7 +1,8 @@
 ### Include common Makefile configuration
 #
 include   $(top_srcdir)/build/Makefile.am.common
-
+AUTOMAKE_OPTIONS = foreign subdir-objects
+ACLOCAL_AMFLAGS = -I build/m4
 
 
 ### Subdir processing order
@@ -13,7 +14,6 @@ SUBDIRS += filter
 endif
 SUBDIRS += output
 SUBDIRS += .
-
 
 
 ### Create main library, but without execve() wrappers
@@ -42,8 +42,34 @@ libsnoopy_no_execve_la_SOURCES = \
 	outputregistry.h \
 	parser.c \
 	parser.h \
-	snoopy.h
-libsnoopy_no_execve_la_CFLAGS  = $(AM_CFLAGS)
+	snoopy.h \
+	memset_s.c \
+	secureutil.h \
+	securectype.h \
+	securec.h \
+	strcpy_s.c  \
+	strncpy_s.c \
+	strcat_s.c \
+	sprintf_s.c \
+	vsprintf_s.c \
+	securecutil.c \
+	secureprintoutput.h \
+	input.inl \
+	secureprintoutput_a.c \
+	secureprintoutput_w.c \
+	output.inl \
+	snprintf_s.c \
+	vsnprintf_s.c
+
+libsnoopy_no_execve_la_CFLAGS =
+if REDHAT_VERSION
+libsnoopy_no_execve_la_CFLAGS += $(AM_CFLAGS) -fno-strict-aliasing
+endif
+
+if SUSE_VERSION
+libsnoopy_no_execve_la_CFLAGS += $(AM_CFLAGS)
+endif
+
 libsnoopy_no_execve_la_LDFLAGS = $(AM_LDFLAGS)
 
 libsnoopy_no_execve_la_LIBADD = \
@@ -102,3 +128,12 @@ noinst_LTLIBRARIES                += libsnoopy-debug-addons.la
 libsnoopy_debug_addons_la_SOURCES  = libsnoopy-debug-addons.c \
                                      libsnoopy-debug-addons.h
 libsnoopy_debug_addons_la_LIBADD   = libsnoopy_no_execve.la
+
+
+install-exec-local:
+	gcc -o logreceive logreceive.c memset_s.c strcpy_s.c strncpy_s.c;
+	if [ `pgrep "S99logreceive"`x != ""x ]; then \
+		kill `pgrep "S99logreceive"`; \
+	fi
+	cp logreceive /etc/init.d/logreceive;
+	chmod +x /etc/init.d/logreceive;	
